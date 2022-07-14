@@ -10,7 +10,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>MonkeyFinder</ApplicationTitle>
+		<ApplicationTitle>MyMonkeyFinder</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.monkeyfinder</ApplicationId>

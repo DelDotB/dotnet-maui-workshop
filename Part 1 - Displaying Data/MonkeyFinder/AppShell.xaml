@@ -29,7 +29,7 @@
 
     <ShellContent
         Shell.NavBarIsVisible="true"
-        Title="Monkeys"
+        Title="SpaceMonkeys"
         ContentTemplate="{DataTemplate view:MainPage}"
         Route="MainPage" />
 

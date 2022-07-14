@@ -28,6 +28,7 @@
 							 HeightRequest="100"
 							 WidthRequest="100"
 							 Aspect="AspectFill" />
+					<!--https://youtu.be/DuNLR_NJv8U?t=3099-->
 					<Label VerticalOptions="Center">
 						<Label.Text>
 							<MultiBinding StringFormat="{}{0} | {1}">

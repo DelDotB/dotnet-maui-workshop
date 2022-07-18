@@ -18,25 +18,28 @@
                     Name="Red-shanked douc"
                     Image="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/douc.jpg"
                     Location="Vietnam" />
+				<model:Monkey
+                    Name="Red-shanked douc2"
+                    Image="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/douc.jpg"
+                    Location="Vietnam" />
+				<model:Monkey
+                    Name="Red-shanked douc3"
+                    Image="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/douc.jpg"
+                    Location="Vietnam" />
 			</x:Array>
 		</CollectionView.ItemsSource>
 		<CollectionView.ItemTemplate>
 			<DataTemplate x:DataType="model:Monkey">
-				<HorizontalStackLayout Padding="10"
-											  Spacing="10">
+				<HorizontalStackLayout Padding="10">
 					<Image Source="{Binding Image}"
 							 HeightRequest="100"
 							 WidthRequest="100"
 							 Aspect="AspectFill" />
 					<!--https://youtu.be/DuNLR_NJv8U?t=3099-->
-					<Label VerticalOptions="Center">
-						<Label.Text>
-							<MultiBinding StringFormat="{}{0} | {1}">
-								<Binding Path="Name"/>
-								<Binding Path="Location"/>
-							</MultiBinding>
-						</Label.Text>
-					</Label>
+					<VerticalStackLayout Padding="10" Spacing="4" VerticalOptions="Center">
+						<Label Text="{Binding Name}" FontSize="24" />
+						<Label Text="{Binding Location}" FontSize="12" />
+					</VerticalStackLayout>
 				</HorizontalStackLayout>
 			</DataTemplate>
 		</CollectionView.ItemTemplate>

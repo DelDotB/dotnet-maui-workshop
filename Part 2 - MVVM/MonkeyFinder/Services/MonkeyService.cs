@@ -4,7 +4,7 @@ namespace MonkeyFinder.Services;
 
 public class MonkeyService
 {
-	HttpClient _httpClient;
+	readonly HttpClient _httpClient;
 
 	public MonkeyService()
 	{

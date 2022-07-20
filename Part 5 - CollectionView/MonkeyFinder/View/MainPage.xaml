@@ -9,15 +9,25 @@
     ios:Page.UseSafeArea="True"
     x:DataType="viewmodel:MonkeysViewModel"
     Title="Monkeys">
-    <Grid
-        ColumnDefinitions="*,*"
-        ColumnSpacing="5"
-        RowDefinitions="*,Auto"
-        RowSpacing="0">
+	
+	
+    <Grid ColumnDefinitions="*,*" ColumnSpacing="5" RowDefinitions="*,Auto" RowSpacing="0">
+
+		<RefreshView Grid.ColumnSpan="2"
+						 Command="{Binding GetMonkeysCommand}"
+						 IsRefreshing="{Binding IsRefreshing}">
         <CollectionView
-            Grid.ColumnSpan="2"
             ItemsSource="{Binding Monkeys}"
             SelectionMode="None">
+				<CollectionView.EmptyView>
+					<StackLayout VerticalOptions="Center" HorizontalOptions="Center"
+									 WidthRequest="200" HeightRequest="200">
+						<Image Source="nodata.png"							
+								 HorizontalOptions="CenterAndExpand"
+								 VerticalOptions="CenterAndExpand"
+								 Aspect="AspectFill"/>
+					</StackLayout>
+				</CollectionView.EmptyView>
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:Monkey">
                     <Grid Padding="10">
@@ -42,16 +52,15 @@
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
-        </CollectionView>
-
-        <Button Text="Get Monkeys" 
+			</CollectionView>
+		</RefreshView>
+		<Button Text="Get Monkeys" 
                 Command="{Binding GetMonkeysCommand}"
                 IsEnabled="{Binding IsNotBusy}"
                 Grid.Row="1"
                 Grid.Column="0"
                 Style="{StaticResource ButtonOutline}"
                 Margin="8"/>
-
         <Button Text="Find Closest" 
                 Command="{Binding GetClosestMonkeyCommand}"
                 IsEnabled="{Binding IsNotBusy}"
@@ -59,13 +68,12 @@
                 Grid.Column="1"
                 Style="{StaticResource ButtonOutline}"
                 Margin="8"/>
-
-
         <ActivityIndicator IsVisible="{Binding IsBusy}"
                            IsRunning="{Binding IsBusy}"
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="CenterAndExpand"
                            Grid.RowSpan="2"
                            Grid.ColumnSpan="2"/>
-    </Grid>
+	
+	</Grid>
 </ContentPage>

@@ -3,7 +3,7 @@ using MonkeyFinder.Services;
 
 public partial class MonkeysViewModel : BaseViewModel
 {
-	MonkeyService monkeyService;
+	readonly MonkeyService monkeyService;
 	public ObservableCollection<Monkey> Monkeys { get; } = new();
 	public MonkeysViewModel(MonkeyService monkeyService)
 	{
